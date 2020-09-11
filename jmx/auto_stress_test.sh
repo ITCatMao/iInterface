@@ -7,7 +7,7 @@ export jmx_template_filename="${jmx_template}${suffix}"
 export os_type=`uname`
 
 # 需要在系统变量中定义jmeter根目录的位置，如下
-# export jmeter_path="/your jmeter path/"
+ export jmeter_path="/Users/catty/develpment/apache-jmeter-5.3"
 
 echo "自动化压测开始"
 
@@ -38,6 +38,7 @@ do
     # 生成Web压测报告
     ${jmeter_path}/bin/jmeter -g ${jtl_filename} -e -o ${web_report_path_name}
 
+    # 清理环境
     rm -f ${jmx_filename} ${jtl_filename}
 done
 echo "自动化压测全部结束"
